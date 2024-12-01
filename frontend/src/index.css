@@ -20,8 +20,8 @@ th, td {
 }
 
 th {
-  background-color: #4CAF50;
-  color: #fff; 
+  background-color: #333;
+  color: #F0E68C; 
 }
 
 tr:nth-child(even) {

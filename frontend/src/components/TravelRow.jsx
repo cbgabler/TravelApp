@@ -1,8 +1,8 @@
-import { useNavigate } from 'react-router-dom';  // Add this import at the top
+import { useNavigate } from 'react-router-dom';
 import { FaEdit, FaTrash } from 'react-icons/fa';
 
 function TravelRow({ travel, removeTravel }) {
-    const navigate = useNavigate();  // useNavigate hook to navigate programmatically
+    const navigate = useNavigate();
 
     const handleDelete = async () => {
         try {
@@ -28,7 +28,7 @@ function TravelRow({ travel, removeTravel }) {
             <td>{travel.text}</td>
             <td>{travel.date}</td>
             <td>
-                <FaEdit onClick={() => navigate(`/edit/${travel._id}`)} /> {/* Fixed navigate link */}
+                <FaEdit onClick={() => navigate(`/edit/${travel._id}`)} /> {}
                 <FaTrash onClick={handleDelete} />
             </td>
         </tr>

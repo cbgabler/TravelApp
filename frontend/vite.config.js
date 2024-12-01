@@ -5,7 +5,7 @@ export default defineConfig({
     plugins: [react()],
     server: {
         proxy: {
-            '/exercises': 'http://localhost:3000',
+            '/travels': 'http://localhost:3000',
         },
     },
 });
