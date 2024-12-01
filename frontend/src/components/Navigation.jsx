@@ -9,6 +9,9 @@ function Navigation() {
                     <Link to="/" className="navbar-link">Home</Link>
                 </li>
                 <li className="navbar-item">
+                    <Link to="/posts" className="navbar-link">Posts</Link>
+                </li>
+                <li className="navbar-item">
                     <Link to="/create" className="navbar-link">Create Post</Link>
                 </li>
                 <li className="navbar-item">
