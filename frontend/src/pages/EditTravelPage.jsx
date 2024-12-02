@@ -32,7 +32,6 @@ function EditTravelPage() {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        // Basic validation to check if all fields are filled out
         if (!title || !text || !date) {
             alert('All fields are required to update the travel.');
             return;

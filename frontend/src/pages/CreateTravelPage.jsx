@@ -10,7 +10,6 @@ const CreateTravelPage = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        // Validate inputs
         if (!title || !text || !date) {
             alert('All fields are required.');
             return;

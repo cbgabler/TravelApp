@@ -17,6 +17,7 @@ function Navigation() {
                 <li className="navbar-item">
                     <Link to="/signin" className="navbar-link">Sign In</Link>
                 </li>
+                <input type="text" className="navbar-search" placeholder='Search...' />
             </ul>
         </nav>
     );
