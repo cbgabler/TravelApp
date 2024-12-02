@@ -1,5 +1,6 @@
+/* Navbar Styles */
 .navbar {
-  background-color: #333;
+  background-color: #FFFFFF; /* Deep teal color to contrast with the gradient background */
   padding: 0.5rem 1rem;
   display: flex;
   justify-content: space-between;
@@ -7,6 +8,7 @@
   color: white;
 }
 
+/* Navbar List */
 .navbar-list {
   list-style: none;
   display: flex;
@@ -14,6 +16,7 @@
   padding: 0;
 }
 
+/* Navbar Items */
 .navbar-item {
   margin-right: 1.5rem;
 }
@@ -22,33 +25,38 @@
   margin-right: 0;
 }
 
+/* Navbar Links */
 .navbar-link {
-  text-decoration: none;
-  color: #F0E68C;
+  font-family: 'Arial', sans-serif;
+  text-decoration: dashed;
+  color: #155263; /* Light yellow/gold color for links */
   font-size: 1rem;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .navbar-link:hover {
-  color: #00bcd4;
+  color: #ff9a3c; /* Warm orange color to match the background gradient */
+  transform: scale(1.1); /* Slight scale effect on hover for interactivity */
 }
 
+/* Search Bar Styles */
 .navbar-search {
   padding: 0.5rem;
   font-size: 1rem;
-  border: 1px solid #F0E68C;
+  border: 1px solid #ff9a3c;
   border-radius: 4px;
-  background-color: #222;
-  color: white; 
-  outline: none; 
+  background-color: #FFFFFF;
+  color: #155263;
+  outline: none;
   transition: border-color 0.3s ease, background-color 0.3s ease;
 }
 
 .navbar-search::placeholder {
-  color: #aaa;
+  color: #155263; /* Light gray placeholder text */
 }
 
+/* Focused State for Search Bar */
 .navbar-search:focus {
-  border-color: #00bcd4;
-  background-color: #444;
+  border-color: #ff9a3c; /* Warm orange border on focus */
+  background-color: #FFFFFF; /* Slightly lighter background on focus */
 }

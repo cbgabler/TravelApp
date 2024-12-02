@@ -1,64 +1,111 @@
-/* Global Page Design */
+/* General Styles */
 body {
-  font-family: Arial, sans-serif; /* Changed from Times New Roman */
-  background-color: #f4f4f4; /* Light grey background */
-  color: #333; /* Dark grey text color */
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+  color: #333; /* Dark gray text color for good contrast */
   margin: 0;
   padding: 0;
-  line-height: 1.6; /* Improved line height for readability */
+  line-height: 1.6;
 }
 
-/* Table Styling */
+/* Homepage Styles */
+.homepage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #FFFFFF, #ff9a3c); /* White to warm orange gradient */
+  padding: 20px;
+}
+
+.homepage-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.homepage-header h1 {
+  font-size: 2.5rem;
+  color: #2c3e50; /* Dark, rich color for the heading to contrast the gradient */
+  margin: 0;
+}
+
+.homepage-header p {
+  font-size: 1.2rem;
+  color: #555; /* Medium gray text for paragraph */
+  max-width: 600px;
+  margin: 10px auto 0;
+}
+
+/* Card Styles */
+.homepage-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+  transition: box-shadow 0.3s ease;
+}
+
+.homepage-card h2 {
+  font-size: 1.8rem;
+  color: #e67e22; /* Orange color for headings to match the gradient's warmth */
+  margin-bottom: 10px;
+}
+
+.homepage-card p {
+  font-size: 1rem;
+  color: #666; /* Light gray text for the card content */
+  margin-bottom: 20px;
+}
+
+/* Button Container */
+.homepage-button {
+  margin-top: 20px;
+}
+
+/* Button Styles */
+button {
+  background-color: #e67e22; /* Orange button color to match the gradient */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #d35400; /* Darker orange on hover */
+  transform: scale(1.05); /* Subtle scaling effect on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .homepage-header h1 {
+    font-size: 2rem;
+  }
+
+  .homepage-header p {
+    font-size: 1rem;
+  }
+
+  .homepage-card {
+    padding: 15px;
+  }
+
+  .homepage-card h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Table css */
 table {
   width: 100%;
   border-collapse: collapse;
   margin: 20px 0;
 }
 
-th, td {
-  border: 1px solid #ddd; /* Light grey border */
-  padding: 10px;
-  text-align: left;
-}
-
-th {
-  background-color: #333; /* Green background for table headers */
-  color: #fff; /* White text color for headers */
-}
-
-tr:nth-child(even) {
-  background-color: #f2f2f2; /* Alternating row colors */
-}
-
-/* Form Styling */
-input, button {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Alternative font family */
-}
-
-/* Additional Rules */
-button {
-  background-color: #007BFF; /* Blue background for buttons */
-  color: #fff; /* White text color for buttons */
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px; /* Rounded corners */
-  cursor: pointer;
-  font-size: 16px;
-}
-
-button:hover {
-  background-color: #0056b3; /* Darker blue when hovering */
-}
-
-input[type="text"], input[type="number"], select {
-  padding: 10px;
-  border: 1px solid #ccc; /* Light grey border for input fields */
-  border-radius: 4px; /* Slightly rounded corners */
-  width: 100%; /* Full width for input fields */
-  box-sizing: border-box; /* Ensure padding does not affect width */
-}
-
-input[type="text"]:focus, input[type="number"]:focus, select:focus {
-  border-color: #007BFF; /* Blue border when focused */
-  outline: none; /* Remove default outline */
-}

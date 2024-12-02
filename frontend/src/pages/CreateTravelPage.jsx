@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import '../App.css';
 
 const CreateTravelPage = () => {
     const [title, setTitle] = useState('');
@@ -42,7 +43,7 @@ const CreateTravelPage = () => {
             const result = await response.json();
             console.log('Travel post created:', result);
             alert('Travel post created successfully!');
-            navigate('/');
+            navigate('/posts');
         } catch (error) {
             console.error('Error:', error);
             alert(error.message);
@@ -50,20 +51,31 @@ const CreateTravelPage = () => {
     };
 
     return (
-        <div>
+        <div className="homepage">
             <h1>Create Travel Post</h1>
             <form onSubmit={handleSubmit}>
                 <label>
                     Title:
-                    <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
+                    <input
+                        type="text"
+                        value={title}
+                        onChange={(e) => setTitle(e.target.value)}
+                    />
                 </label>
                 <label>
                     Text:
-                    <input type="text" value={text} onChange={(e) => setText(e.target.value)} />
+                    <textarea
+                        value={text}
+                        onChange={(e) => setText(e.target.value)}
+                    />
                 </label>
                 <label>
                     Date:
-                    <input type="date" value={date} onChange={(e) => setDate(e.target.value)} />
+                    <input
+                        type="date"
+                        value={date}
+                        onChange={(e) => setDate(e.target.value)}
+                    />
                 </label>
                 <button type="submit">Create Post</button>
             </form>

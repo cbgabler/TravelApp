@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import '../App.css';
 
 function EditTravelPage() {
     const { id } = useParams();
-    const [travel, setPost] = useState(null);
+    const [travel, setTravel] = useState(null);
     const [title, setTitle] = useState('');
     const [text, setText] = useState('');
     const [date, setDate] = useState('');
@@ -18,7 +19,7 @@ function EditTravelPage() {
                 return res.json();
             })
             .then(data => {
-                setPost(data);
+                setTravel(data);
                 setTitle(data.title);
                 setText(data.text);
                 setDate(data.date);
@@ -62,20 +63,34 @@ function EditTravelPage() {
     if (!travel) return <div>Loading...</div>;
 
     return (
-        <div>
+        <div className="homepage">
             <h2>Edit Travel</h2>
             <form onSubmit={handleSubmit}>
                 <label>
                     Title:
-                    <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} required />
+                    <input
+                        type="text"
+                        value={title}
+                        onChange={(e) => setTitle(e.target.value)}
+                        required
+                    />
                 </label>
                 <label>
                     Text:
-                    <textarea value={text} onChange={(e) => setText(e.target.value)} required />
+                    <textarea
+                        value={text}
+                        onChange={(e) => setText(e.target.value)}
+                        required
+                    />
                 </label>
                 <label>
                     Date (MM-DD-YY):
-                    <input type="text" value={date} onChange={(e) => setDate(e.target.value)} required />
+                    <input
+                        type="text"
+                        value={date}
+                        onChange={(e) => setDate(e.target.value)}
+                        required
+                    />
                 </label>
                 <button type="submit">Update</button>
             </form>

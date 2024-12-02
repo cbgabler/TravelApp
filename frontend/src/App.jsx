@@ -4,6 +4,7 @@ import CreateTravelPage from './pages/CreateTravelPage';
 import EditTravelPage from './pages/EditTravelPage';
 import Posts from './pages/Posts';
 import Navigation from './components/Navigation';
+import './App.css';
 
 function App() {
     return (

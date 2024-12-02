@@ -1,8 +1,8 @@
-import React from 'react';
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import TravelTable from '../components/TravelTable';
+import '../App.css';
 
-function Posts () {
+function Posts() {
     const [travels, setTravels] = useState([]);
 
     useEffect(() => {
@@ -20,11 +20,11 @@ function Posts () {
     }, []);
 
     return (
-        <div>
+        <div className="homepage">
             <h2>Travel List</h2>
             <TravelTable travels={travels} />
         </div>
-    )
+    );
 }
 
 export default Posts;
