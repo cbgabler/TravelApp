@@ -61,6 +61,28 @@ body {
   margin-bottom: 20px;
 }
 
+.posts-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  width: 80%;
+  transition: box-shadow 0.3s ease;
+}
+
+.posts-card h2 {
+  font-size: 1.8rem;
+  color: #e67e22; /* Orange color for headings to match the gradient's warmth */
+  margin-bottom: 10px;
+}
+
+.posts-card p {
+  font-size: 1rem;
+  color: #666; /* Light gray text for the card content */
+  margin-bottom: 20px;
+}
+
 /* Button Container */
 .homepage-button {
   margin-top: 20px;
@@ -109,3 +131,62 @@ table {
   margin: 20px 0;
 }
 
+/* General page container */
+.create-travel-container {
+  width: 60%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #FFFFFF;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
+
+/* Header styles */
+.create-travel-container h1 {
+  text-align: center;
+  font-size: 2rem;
+  color: #333;
+}
+
+/* Form styling */
+.create-travel-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Label styles */
+.create-travel-form label {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Input and textarea fields */
+.input-field {
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  outline: none;
+}
+
+/* Focus styles for input fields */
+.input-field:focus {
+  border-color: #d35400;
+  box-shadow: 0 0 5px #d35400;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .create-travel-container {
+      width: 90%;
+  }
+}
+
+/* Footer */
+.footer {
+  color: #000000;
+}

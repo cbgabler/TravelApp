@@ -52,33 +52,41 @@ const CreateTravelPage = () => {
 
     return (
         <div className="homepage">
-            <h1>Create Travel Post</h1>
-            <form onSubmit={handleSubmit}>
-                <label>
-                    Title:
+            <div className="create-travel-container">
+                <h1>Create Travel Post</h1>
+                <form onSubmit={handleSubmit} className="create-travel-form">
+                    <label htmlFor="title">Title:</label>
                     <input
                         type="text"
+                        id="title"
                         value={title}
                         onChange={(e) => setTitle(e.target.value)}
+                        className="input-field"
+                        required
                     />
-                </label>
-                <label>
-                    Text:
+                    
+                    <label htmlFor="text">Text:</label>
                     <textarea
+                        id="text"
                         value={text}
                         onChange={(e) => setText(e.target.value)}
+                        className="input-field"
+                        required
                     />
-                </label>
-                <label>
-                    Date:
+                    
+                    <label htmlFor="date">Date:</label>
                     <input
                         type="date"
+                        id="date"
                         value={date}
                         onChange={(e) => setDate(e.target.value)}
+                        className="input-field"
+                        required
                     />
-                </label>
-                <button type="submit">Create Post</button>
-            </form>
+                    
+                    <button type="submit" className="button">Create Post</button>
+                </form>
+            </div>
         </div>
     );
 };

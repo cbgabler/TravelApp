@@ -19,7 +19,7 @@ function App() {
                         <Route path="/edit/:id" element={<EditTravelPage />} />
                     </Routes>
                 </main>
-                <footer>
+                <footer className='footer'>
                     <p>© 2024 Carson Gabler</p>
                 </footer>
             </div>

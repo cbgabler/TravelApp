@@ -21,8 +21,10 @@ function Posts() {
 
     return (
         <div className="homepage">
-            <h2>Travel List</h2>
-            <TravelTable travels={travels} />
+            <div className="posts-card">
+                <h2>Posts</h2>
+                <TravelTable travels={travels} />
+            </div>
         </div>
     );
 }
