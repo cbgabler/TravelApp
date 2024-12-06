@@ -190,3 +190,84 @@ table {
 .footer {
   color: #000000;
 }
+
+/* General container for the edit travel page */
+.edit-travel-container {
+  width: 60%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #FFFFFF;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
+
+/* Header styling for the edit page */
+.edit-travel-container h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Form container */
+.edit-travel-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Label styling */
+.edit-travel-form label {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+/* Input and textarea styling */
+.input-field,
+textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Focus styling for inputs */
+.input-field:focus,
+textarea:focus {
+  border-color: #d35400;
+  box-shadow: 0 0 5px #d35400;
+}
+
+/* Button styling */
+.button {
+  background-color: #e67e22;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.button:hover {
+  background-color: #d35400;
+  transform: scale(1.05);
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .edit-travel-container {
+    width: 90%;
+  }
+
+  .edit-travel-container h2 {
+    font-size: 1.8rem;
+  }
+}

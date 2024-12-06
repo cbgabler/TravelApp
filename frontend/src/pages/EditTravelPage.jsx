@@ -49,7 +49,7 @@ function EditTravelPage() {
 
             if (response.ok) {
                 alert('Travel updated successfully!');
-                navigate('/');
+                navigate('/posts');
             } else {
                 const errorData = await response.json();
                 alert(`Failed to update travel: ${errorData.message}`);
@@ -64,36 +64,41 @@ function EditTravelPage() {
 
     return (
         <div className="homepage">
-            <h2>Edit Travel</h2>
-            <form onSubmit={handleSubmit}>
-                <label>
-                    Title:
+            <div className="edit-travel-container">
+                <h2>Edit Travel</h2>
+                <form onSubmit={handleSubmit} className="edit-travel-form">
+                    <label htmlFor="title">Title:</label>
                     <input
                         type="text"
+                        id="title"
                         value={title}
                         onChange={(e) => setTitle(e.target.value)}
+                        className="input-field"
                         required
                     />
-                </label>
-                <label>
-                    Text:
+                    
+                    <label htmlFor="text">Text:</label>
                     <textarea
+                        id="text"
                         value={text}
                         onChange={(e) => setText(e.target.value)}
+                        className="input-field"
                         required
                     />
-                </label>
-                <label>
-                    Date (MM-DD-YY):
+                    
+                    <label htmlFor="date">Date:</label>
                     <input
                         type="text"
+                        id="date"
                         value={date}
                         onChange={(e) => setDate(e.target.value)}
+                        className="input-field"
                         required
                     />
-                </label>
-                <button type="submit">Update</button>
-            </form>
+                    
+                    <button type="submit" className="button">Update</button>
+                </form>
+            </div>
         </div>
     );
 }

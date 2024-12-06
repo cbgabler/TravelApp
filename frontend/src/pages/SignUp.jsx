@@ -19,7 +19,7 @@ function SignUp() {
         password,
       });
       setMessage(response.data.message);
-      navigate('/signin');  // Redirect to Sign In page
+      navigate('/signin');
     } catch (error) {
       setMessage(error.response.data.message);
     }

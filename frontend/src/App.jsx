@@ -4,6 +4,7 @@ import CreateTravelPage from './pages/CreateTravelPage';
 import EditTravelPage from './pages/EditTravelPage';
 import Posts from './pages/Posts';
 import Navigation from './components/Navigation';
+import SignIn from './pages/SignIn';
 import './App.css';
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
                         <Route path="/posts/" element={<Posts />} />
                         <Route path="/create" element={<CreateTravelPage />} />
                         <Route path="/edit/:id" element={<EditTravelPage />} />
+                        <Route path="/signin" elemenet={<SignIn />} />
                     </Routes>
                 </main>
                 <footer className='footer'>

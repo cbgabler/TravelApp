@@ -30,7 +30,7 @@
   font-family: 'Arial', sans-serif;
   text-decoration: dashed;
   color: #155263; /* Light yellow/gold color for links */
-  font-size: 1rem;
+  font-size: 1.5rem;
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
