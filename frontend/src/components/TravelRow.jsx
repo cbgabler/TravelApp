@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { FaEdit, FaTrash } from 'react-icons/fa';
 
-function TravelRow({ travel, removeTravel }) {
+function TravelRow({ travel }) {
     const navigate = useNavigate();
 
     const handleDelete = async () => {
