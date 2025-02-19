@@ -41,7 +41,6 @@ function Posts() {
     }, [expandedPost_id]);
 
     const togglePostVisibility = (id) => {
-        console.log(id)
         setExpandedPost_id(expandedPost_id === id ? null : id);
     };
 
