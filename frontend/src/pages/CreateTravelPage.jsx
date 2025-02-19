@@ -6,12 +6,13 @@ const CreateTravelPage = () => {
     const [title, setTitle] = useState('');
     const [text, setText] = useState('');
     const [date, setDate] = useState('');
+    const [location, setLocation] = useState('');
     const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        if (!title || !text || !date) {
+        if (!title || !text || !date || !location) {
             alert('All fields are required.');
             return;
         }
@@ -20,6 +21,7 @@ const CreateTravelPage = () => {
             title: title.trim(),
             text: text.trim(),
             date,
+            location : location.trim(),
         };
 
         try {
@@ -80,6 +82,16 @@ const CreateTravelPage = () => {
                         id="date"
                         value={date}
                         onChange={(e) => setDate(e.target.value)}
+                        className="input-field"
+                        required
+                    />
+
+                    <label htmlFor="location">Location:</label>
+                    <input
+                        type="location"
+                        id="location"
+                        value={location}
+                        onChange={(e) => setLocation(e.target.value)}
                         className="input-field"
                         required
                     />

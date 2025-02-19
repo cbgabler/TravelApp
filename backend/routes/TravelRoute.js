@@ -4,7 +4,8 @@ import {
     getAllTravels,
     getTravelById,
     updateTravel,
-    deleteTravel
+    deleteTravel,
+    getTravelsByLoc
 } from '../controllers/TravelControllers.js';
 
 const router = express.Router();
@@ -17,6 +18,9 @@ router.get('/', getAllTravels);
 
 // Get a single travel post by ID
 router.get('/:id', getTravelById);
+
+// Get a single travel by location
+router.get('/:location', getTravelsByLoc)
 
 // Update a travel post by ID
 router.put('/:id', updateTravel);

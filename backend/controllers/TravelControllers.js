@@ -2,14 +2,14 @@ import Travel from '../models/TravelModel.js';
 
 // Create a new travel post
 export const createTravel = async (req, res) => {
-    const { title, text, date } = req.body;
+    const { title, text, date, location } = req.body;
 
-    if (!title || !text || !date) {
+    if (!title || !text || !date || !location) {
         return res.status(400).json({ error: 'All fields are required.' });
     }
 
     try {
-        const newTravel = new Travel({ title, text, date });
+        const newTravel = new Travel({ title, text, date, location });
         await newTravel.save();
         res.status(201).json(newTravel);
     } catch (error) {
@@ -41,6 +41,22 @@ export const getTravelById = async (req, res) => {
         res.status(500).json({ error: 'Failed to fetch travel post.' });
     }
 };
+
+// Get all travel posts by location
+export const getTravelsByLoc = async (req, res) => {
+    const {location} = req.params;
+
+    try {
+        const travels = await Travel.find({ location })
+        if (!travels) {
+            return res.status(404).json({ error: `There are no travels that exist in ${location}` });
+        }
+        res.status(200).json(travels);
+    } catch (error) {
+        res.status(500).json({ error: 'Failed to fetch travel posts.'})
+    }
+    
+}
 
 // Update a travel post by ID
 export const updateTravel = async (req, res) => {

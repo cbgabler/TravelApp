@@ -13,6 +13,10 @@ const travelSchema = new mongoose.Schema({
         type: Date,
         required: true,
     },
+    location: {
+        type: String,
+        required: true,
+    }
 });
 
 const Travel = mongoose.model('Travel', travelSchema);

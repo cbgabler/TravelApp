@@ -33,12 +33,12 @@ function EditTravelPage() {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        if (!title || !text || !date) {
+        if (!title || !text || !date || !location) {
             alert('All fields are required to update the travel.');
             return;
         }
 
-        const updatedTravel = { title, text, date };
+        const updatedTravel = { title, text, date, location };
 
         try {
             const response = await fetch(`http://localhost:3000/travels/${id}`, {
@@ -92,6 +92,16 @@ function EditTravelPage() {
                         id="date"
                         value={date}
                         onChange={(e) => setDate(e.target.value)}
+                        className="input-field"
+                        required
+                    />
+
+                    <label htmlFor="location">Location:</label>
+                    <input
+                        type="location"
+                        id="location"
+                        value={location}
+                        onChange={(e) => setLocation(e.target.value)}
                         className="input-field"
                         required
                     />
