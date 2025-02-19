@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 import '../App.css';
 
 const CreateTravelPage = () => {
@@ -7,6 +8,9 @@ const CreateTravelPage = () => {
     const [text, setText] = useState('');
     const [date, setDate] = useState('');
     const [location, setLocation] = useState('');
+    const [file, setFile] = useState(null);
+    const [progess, setProgress] = useState({ started: false, pc: 0});
+    const [msg, setMsg] = useState(null);
     const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
@@ -52,6 +56,39 @@ const CreateTravelPage = () => {
         }
     };
 
+    function handleUpload() {
+        if(!file) {
+            setMsg('No file selected.')
+            return;
+        }
+
+        const fd = new FormData();
+        fd.append('file', file);
+
+        setMsg("Uploading...");
+        setProgress(prevState => {
+            return {...prevState, started: true}
+        })
+
+        // Post fd data to httpbin for multi-files
+        axios.post('http://httpbin.org/post', fd, {
+            // Every time http bin progresses, onUploadProgress updates with the current percentage
+            onUploadProgress: (progressEvent) => {
+                const percentCompleted = Math.round((progressEvent.loaded * 100) / progressEvent.total);
+                setProgress(prevState => ({ ...prevState, pc: percentCompleted }));
+            }
+            
+        })
+        .then(res => {
+            setMsg('Upload successful');
+            console.log(res.data);
+        })
+        .catch(err => {
+            setMsg('Upload failed');
+            console.log(err);
+        })
+    }
+
     return (
         <div className="homepage">
             <div className="create-travel-container">
@@ -88,15 +125,22 @@ const CreateTravelPage = () => {
 
                     <label htmlFor="location">Location:</label>
                     <input
-                        type="location"
+                        type="text"
                         id="location"
                         value={location}
                         onChange={(e) => setLocation(e.target.value)}
                         className="input-field"
                         required
                     />
-                    
                     <button type="submit" className="button">Create Post</button>
+                </form>
+                <form onSubmit={handleUpload} className="create-travel-form">
+                <label htmlFor='imgFile'>Image:</label>
+                    <input
+                        type="file"
+                        id="imgFile"
+                        onChange={(e) => setFile(e.target.files[0])}
+                    />
                 </form>
             </div>
         </div>
