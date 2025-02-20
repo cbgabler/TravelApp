@@ -9,7 +9,7 @@ const CreateTravelPage = () => {
     const [date, setDate] = useState('');
     const [location, setLocation] = useState('');
     const [file, setFile] = useState(null);
-    const [progess, setProgress] = useState({ started: false, pc: 0});
+    const [progress, setProgress] = useState({ started: false, pc: 0});
     const [msg, setMsg] = useState(null);
     const navigate = useNavigate();
 
@@ -71,11 +71,11 @@ const CreateTravelPage = () => {
         })
 
         // Post fd data to httpbin for multi-files
+        // This is a mock post request. Will be changed to actually store files
         axios.post('http://httpbin.org/post', fd, {
             // Every time http bin progresses, onUploadProgress updates with the current percentage
             onUploadProgress: (progressEvent) => {
-                const percentCompleted = Math.round((progressEvent.loaded * 100) / progressEvent.total);
-                setProgress(prevState => ({ ...prevState, pc: percentCompleted }));
+                return { ...prevState, pc: progressEvent.progress*100 }
             }
             
         })
@@ -134,14 +134,17 @@ const CreateTravelPage = () => {
                     />
                     <button type="submit" className="button">Create Post</button>
                 </form>
-                <form onSubmit={handleUpload} className="create-travel-form">
-                <label htmlFor='imgFile'>Image:</label>
+                <div className="upload-section">
+                    <label htmlFor="imgFile">Image:</label>
                     <input
                         type="file"
                         id="imgFile"
                         onChange={(e) => setFile(e.target.files[0])}
                     />
-                </form>
+                    <button type="button" onClick={handleUpload} className="button">Upload</button>
+                </div>
+                { progress.started && <progress max="100" value={ progress.pc }></progress>}
+                { msg && <span>{ msg }</span>}
             </div>
         </div>
     );
