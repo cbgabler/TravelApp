@@ -18,7 +18,7 @@ function App() {
                         <Route path="/posts/" element={<Posts />} />
                         <Route path="/create" element={<CreateTravelPage />} />
                         <Route path="/edit/:id" element={<EditTravelPage />} />
-                        <Route path="/signin" elemenet={<SignIn />} />
+                        <Route path="/signin" element={<SignIn />} />
                     </Routes>
                 </main>
                 <footer className='footer'>

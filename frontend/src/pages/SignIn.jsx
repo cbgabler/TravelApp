@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { FaRegUser } from "react-icons/fa";
+import { RiLockPasswordLine } from "react-icons/ri";
+import '../styles/signin.css'
 
 function SignIn() {
   const [email, setEmail] = useState('');
@@ -25,22 +28,29 @@ function SignIn() {
   };
 
   return (
-    <div>
-      <h2>Sign In</h2>
+    <div className='form-container'>
+      <h2>Login</h2>
       <form onSubmit={handleSubmit}>
-        <input
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <button type="submit">Sign In</button>
+        <div className='form-control'>
+          <input
+            type="email"
+            placeholder="Enter your email or username"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <FaRegUser className='icon username'/>
+        </div>
+        <div className='form-control'>
+          <input
+            type="password"
+            placeholder="Enter your password"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <RiLockPasswordLine className='icon password'/>
+        </div>
+        <button type="submit">Login</button>
+        <p>Don't have an account? Please sign up</p>
       </form>
       {message && <p>{message}</p>}
     </div>
