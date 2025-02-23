@@ -61,14 +61,14 @@ export const getTravelsByLoc = async (req, res) => {
 // Update a travel post by ID
 export const updateTravel = async (req, res) => {
     const { id } = req.params;
-    const { title, text, date } = req.body;
+    const { title, text, date, location } = req.body;
 
-    if (!title || !text || !date) {
+    if (!title || !text || !date || !location) {
         return res.status(400).json({ error: 'All fields are required.' });
     }
 
     try {
-        const updatedTravel = await Travel.findByIdAndUpdate(id, { title, text, date }, { new: true });
+        const updatedTravel = await Travel.findByIdAndUpdate(id, { title, text, date, location }, { new: true });
         if (!updatedTravel) {
             return res.status(404).json({ error: 'Travel post not found.' });
         }
