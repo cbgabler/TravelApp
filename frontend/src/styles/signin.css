@@ -67,3 +67,7 @@ form button {
     cursor: pointer;
     border-radius: 50px;
 }
+
+form button:active{
+    transform: scale(0.98)
+}
